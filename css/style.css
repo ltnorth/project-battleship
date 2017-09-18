@@ -1,23 +1,30 @@
 body {
+	font-family: "Helvetica";
 }
 
 ul {
-	width: 606px;
-	height: 606px;
+	width: 550px;
+	height: 550px;
 	margin: 20px auto;
 	list-style-type: none;
 	padding: 0;
-	background-color: 
+	background-color: #393BC2;
+	text-align: center;
 }
 li {
-	width: 200px;
-	height: 200px;
+	width: 50px;
+	height: 50px;
 	border: 1px solid black;
 	display: inline-block;
 	box-sizing: border-box;
 	float: left;
-	margin: 1px;
-	font-size: 50px;
-	line-height: 200px;
-	background-color: white;
+	font-size: 30px;
+	line-height: 50px;
+}
+
+.red {
+	color: red;
+}
+.white {
+	color: white;
 }
