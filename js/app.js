@@ -1,10 +1,9 @@
 $(function() {
-	var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-	var player1;
-	var player2;
 
+	
 	generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"));
 	generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"));
+	
 
 
 	$("#show1").click(function() {
@@ -18,20 +17,21 @@ $(function() {
 		$("#player2").show();
 	});
 
-	function generatePlayerDisplay(display1, display2, display3) {
-		generateBoard(display1, display3);
+	function generatePlayerDisplay(display1, display2, opponent) {
+		generateBoard(display1, opponent);
 		generateBoard(display2);
 		addBoats(display2);
 	}
 
 	function generateBoard(display, display2) {
+		var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 		for(var i = 0; i < 121; i++) {
 			$(display).append($("<li></li>"));
 		}
 	
 		$(display).children().each(function (index, li) {
 			if(index === 0){
-				$(li).html("x");
+				$(li).html(" ");
 			} else if(index < 11) {
 				$(li).html(index);
 			} else if(index%11 === 0) {
@@ -42,11 +42,16 @@ $(function() {
 						red($(li));
 					} else {
 						white($(li));
+						$(display).parent().fadeOut(500);
+
 					}
-					
 				});
 			}
 		});
+
+	}
+
+	function winCheck() {
 
 	}
 

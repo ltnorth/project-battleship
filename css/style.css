@@ -23,7 +23,6 @@ li {
 }
 div {
 	margin: 20px auto;
-
 }
 .display {
 	display: none;
@@ -39,3 +38,17 @@ div {
 .boat {
 	background-color: #464646;
 }
+
+#reset {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
