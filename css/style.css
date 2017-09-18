@@ -1,5 +1,7 @@
 body {
 	font-family: "Helvetica";
+	width: 100vw;
+	height: 100vh;
 }
 
 ul {
@@ -39,6 +41,14 @@ div {
 	background-color: #464646;
 }
 
+header {
+	margin: 0 auto;
+	text-align: center;
+}
+#start {
+	width: 100px;
+	height: 30px;
+}
 #reset {
 	display: none;
 }

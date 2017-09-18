@@ -4,8 +4,12 @@ $(function() {
 	generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"));
 	generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"));
 	
-
-
+	$("#start").click(function() {
+		$(".display").show();
+		$("#player1").show();
+		$("#player2").hide();
+		$("#start").hide();
+	});
 	$("#show1").click(function() {
 		$(".display").show();
 		$("#player2").hide();
@@ -39,10 +43,11 @@ $(function() {
 			} else {
 				$(li).one("click", function() {
 					if(hitCheck(index, display2) === true) {
-						red($(li));
+						hit($(li));
+
 					} else {
-						white($(li));
-						$(display).parent().fadeOut(500);
+						miss($(li), display);
+						
 
 					}
 				});
@@ -51,9 +56,22 @@ $(function() {
 
 	}
 
-	function winCheck() {
-
+	function hit(li) {
+		li.html("&#x25cf");
+		li.addClass("red");
 	}
+
+	function miss(li, display) {
+		li.html("&#x25cf");
+		li.addClass("white");
+		$(display).parent().fadeOut(500);
+	}
+
+	// function winCheck(num) {
+	// 	if(num === 17) {
+
+	// 	}
+	// }
 
 	function hitCheck(num, display) {
 		var lis = $(display).children()
@@ -111,15 +129,8 @@ $(function() {
         return number;
     }
 
-	function red(li) {
-		li.html("&#x25cf");
-		li.addClass("red");
-	}
-	function white(li) {
-		li.html("&#x25cf");
-		li.addClass("white");
-	}
-
+	
+	
 
 
 
