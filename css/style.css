@@ -3,23 +3,31 @@ body {
 }
 
 ul {
-	width: 550px;
-	height: 550px;
-	margin: 20px auto;
+	width: 330px;
+	height: 330px;
 	list-style-type: none;
 	padding: 0;
+	margin: 0 30px;
 	background-color: #393BC2;
-	text-align: center;
+	display: inline-block;
 }
 li {
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	border: 1px solid black;
 	display: inline-block;
 	box-sizing: border-box;
 	float: left;
-	font-size: 30px;
-	line-height: 50px;
+	font-size: 20px;
+	line-height: 30px;
+}
+div {
+	margin: 20px auto;
+
+}
+.display {
+	display: none;
+	text-align: center;
 }
 
 .red {

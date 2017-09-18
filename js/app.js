@@ -1,22 +1,28 @@
 $(function() {
-	$(".display").hide();
 	var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 	var player1;
 	var player2;
 
-	generateBoard($("#player1"));
-	generateBoard($("#player2"));
+	generatePlayerDisplay($("#player11"), $("#player12"));
+	generatePlayerDisplay($("#player21"), $("#player22"));
 
 
 	$("#show1").click(function() {
+		$(".display").show();
 		$("#player2").hide();
 		$("#player1").show();
 	});
 	$("#show2").click(function() {
+		$(".display").show();
 		$("#player1").hide();
 		$("#player2").show();
 	});
 
+	function generatePlayerDisplay(display1, display2) {
+		generateBoard(display1);
+		generateBoard(display2);
+		addBoats(display2);
+	}
 
 	function generateBoard(display) {
 		for(var i = 0; i < 121; i++) {
@@ -46,8 +52,9 @@ $(function() {
 			}
 		});
 
-		addBoats(display);
 	}
+
+	
 
 
 	function addBoats(display) {
