@@ -26,17 +26,17 @@ $(function() {
 		$("#player2").show();
 	});
 	$(".reset").click(function() {
-		clear($("#player11"));
-		clear($("#player12"));
-		clear($("#player21"));
-		clear($("#player22"));
+		clearAll();
 		run();
 		$("#start-display").show();
 		$(".appendage").hide();
 	});
 	
-	function clear(display) {
-		$(display).empty();
+	function clearAll() {
+		$("#player11").empty();
+		$("#player12").empty();
+		$("#player21").empty();
+		$("#player22").empty();
 	}
 
 	function generatePlayerDisplay(display1, display2, opponent, player) {
