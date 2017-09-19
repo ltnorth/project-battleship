@@ -8,13 +8,19 @@
 </head>
 <body>
 	<h1>Battleships</h1>
-	<button id="show1">Player 1 screen</button>
-	<button id="show2">Player 2 screen</button>
+<!-- 	<button id="show1">Player 1 screen</button>
+	<button id="show2">Player 2 screen</button> -->
 
-	<header id="startDisplay">
-		<p>Welcome to Battleships! A guessing game where the aim is to sink your opponent's fleet before they sink yours. Take shots by clicking on the blank grid, if you hit any of your opponent's ships, you may take another shot, if not, it's your opponent's turn to take a shot at your ships!</p>
-		<p>When you are ready, click the button below to begin where player 1 has the first go.</p>
-		<button id="begin">Click to begin</button>
+	<header>
+		<div id="start-display">
+			<p>Welcome to Battleships! A guessing game where the aim is to sink your opponent's fleet before they sink yours. Take shots by clicking on the blank grid, if you hit any of your opponent's ships, you may take another shot, if not, it's your opponent's turn to take a shot at your ships!</p>
+			<p>When you are ready, click the button below to begin where player 1 has the first go.</p>
+			<button class="begin">Click to begin</button>
+		</div>
+		<div id="reset-message">
+			<p>Get ready! Player 1 to play first.</p>
+			<button class="begin">Click to begin</button>
+		</div>
 	</header>
 
 	<main class="display">
@@ -30,16 +36,16 @@
 		</div>
 		<p class="hit appendage">That's a hit! Fire again!</p>
 		<p class="miss appendage">You missed! Click the button to switch players.</p>
-		<button class="miss appendage" id="missBtn">Next player</button>
+		<button class="miss appendage" id="miss-btn">Next player</button>
 		<p class="message">Click anywhere in the grid to take a shot.</p>
 	</main>
-	<div class="appendage" id="winDisplay1">
+	<div class="appendage" id="win-display1">
 		<p>Player 1 has won! Congratulations! Commiserations to Player 2, better luck next time!</p>
-		<button id="reset">Play again?</button>
+		<button class="reset">Play again?</button>
 	</div>
-	<div class="appendage" id="winDisplay2">
+	<div class="appendage" id="win-display2">
 		<p>A player has won! Congratulations! Commiserations to Player 1, better luck next time!</p>
-		<button id="reset">Play again?</button>
+		<button class="reset">Play again?</button>
 	</div>
 </body>
 </html>

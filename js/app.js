@@ -9,11 +9,11 @@ $(function() {
 	}
 	
 	
-	$("#begin").click(function() {
+	$(".begin").click(function() {
 		$(".display").show();
 		$("#player1").show();
 		$("#player2").hide();
-		$("#startDisplay").hide();
+		$("#start-display").hide();
 	});
 	$("#show1").click(function showP1() {
 		$(".display").show();
@@ -25,12 +25,19 @@ $(function() {
 		$("#player1").hide();
 		$("#player2").show();
 	});
-	$("#reset").click(function() {
-		console.log('reset hit');
+	$(".reset").click(function() {
+		clear($("#player11"));
+		clear($("#player12"));
+		clear($("#player21"));
+		clear($("#player22"));
 		run();
-		console.log('here too');
+		$("#start-display").show();
+		$(".appendage").hide();
 	});
 	
+	function clear(display) {
+		$(display).empty();
+	}
 
 	function generatePlayerDisplay(display1, display2, opponent, player) {
 		generateBoard(display1, opponent, player);
@@ -66,12 +73,10 @@ $(function() {
 	}
 
 	function hit(li, player) {
-		console.log(hitCount[player]);
 		li.html("&#x25cf");
 		li.addClass("red");
 		$(".hit").show();
 		hitCount[player]++;
-		console.log(hitCount[player]);
 	}
 
 	function miss(li, display, opponent) {
@@ -83,7 +88,7 @@ $(function() {
 		setTimeout(function() {
 			$(".miss").fadeIn(500);
 		}, 500);
-		$("#missBtn").click(function() {
+		$("#miss-btn").click(function() {
 			$(".appendage").hide();
 			$(display).parent().hide();
 			$(opponent).parent().show();
@@ -91,16 +96,15 @@ $(function() {
 	}
 
 	function winCheck() {
-		console.log("You got here");
 		if(hitCount[0] === 17) {
 			$(".display").fadeOut(2000);
 			setTimeout(function() {
-				$("#winDisplay1").fadeIn(2000);
+				$("#win-display1").fadeIn(2000);
 			}, 2000);
 		} else if(hitCount[1] === 17){
 			$(".display").fadeOut(2000);
 			setTimeout(function() {
-				$("#winDisplay2").fadeIn(2000);
+				$("#win-display2").fadeIn(2000);
 			}, 2000);
 		}
 	}
