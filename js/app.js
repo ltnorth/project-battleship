@@ -58,7 +58,7 @@ $(function() {
 				$(li).html(index);
 			} else if(index%11 === 0) {
 				$(li).html(letters[index/11-1]);
-			} else {
+			} else if(opponent) {
 				$(li).one("click", function() {
 					if(hitCheck(index, opponent) === true) {
 						hit($(li), player);

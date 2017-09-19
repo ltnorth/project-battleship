@@ -39,7 +39,32 @@ div {
 	color: white;
 }
 .boat {
+	width: 0;
+	height: 0;
+}
+.grey {
 	background-color: #464646;
+}
+
+.arrow-up {
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid #464646;
+}
+.arrow-right {
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #464646;
+}
+.arrow-down {
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid #464646;
+}
+.arrow-left {
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #464646;
 }
 
 header {
