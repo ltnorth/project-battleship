@@ -26,9 +26,10 @@ li {
 div {
 	margin: 20px auto;
 }
+
 .display {
-	display: none;
 	text-align: center;
+	display: none;
 }
 
 .red {
@@ -42,6 +43,7 @@ div {
 }
 
 header {
+	width: 500px;
 	margin: 0 auto;
 	text-align: center;
 }

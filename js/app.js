@@ -4,21 +4,26 @@ $(function() {
 	generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"));
 	generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"));
 	
-	$("#start").click(function() {
+	$("#begin").click(function() {
 		$(".display").show();
 		$("#player1").show();
 		$("#player2").hide();
-		$("#start").hide();
+		$("#startDisplay").hide();
 	});
-	$("#show1").click(function() {
+	$("#show1").click(function showP1() {
 		$(".display").show();
 		$("#player2").hide();
 		$("#player1").show();
 	});
-	$("#show2").click(function() {
+	$("#show2").click(function showP2() {
 		$(".display").show();
 		$("#player1").hide();
 		$("#player2").show();
+	});
+	$("#missBtn").click(function() {
+		$(".appendage").hide();
+		$("div:visible").hide();
+		$("div:hidden").show();
 	});
 
 	function generatePlayerDisplay(display1, display2, opponent) {
@@ -59,12 +64,17 @@ $(function() {
 	function hit(li) {
 		li.html("&#x25cf");
 		li.addClass("red");
+		$(".hit").show();
 	}
 
 	function miss(li, display) {
 		li.html("&#x25cf");
 		li.addClass("white");
 		$(display).parent().fadeOut(500);
+		$(".message").fadeOut(500);
+		setTimeout(function() {
+			$(".miss").fadeIn(500);
+		}, 500);
 	}
 
 	// function winCheck(num) {
