@@ -131,7 +131,14 @@ $(function() {
 					var position = randomGridPos(boat, 0);
 					if(verify(boat, position, display, 0) === true){
 						for(var i = 0; i < boat; i++) {
-							$(lis[position + i]).addClass("boat");
+							// if(i === 0){
+							// 	$(lis[position]).addClass("boat left");
+							// } else if(i === boat-1) {
+							// 	$(lis[position + i]).addClass("boat right");
+							// } else {
+							// 	$(lis[position + i]).addClass("boat grey");
+							// }
+							$(lis[position + i]).addClass("boat grey");
 						}
 						check = true;
 					}
@@ -139,7 +146,14 @@ $(function() {
 					var position = randomGridPos(boat, 1);
 					if(verify(boat, position, display, 1) === true){
 						for(var i = 0; i < boat; i++) {
-							$(lis[position + (i*11)]).addClass("boat");
+							// if(i === 0){
+							// 	$(lis[position]).addClass("boat top");
+							// } else if(i === boat-1) {
+							// 	$(lis[position + (i*11)]).addClass("boat bottom");
+							// } else {
+							// 	$(lis[position + (i*11)]).addClass("boat grey");
+							// }
+							$(lis[position + (i*11)]).addClass("boat grey");
 						}
 						check = true;
 					}

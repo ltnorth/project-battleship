@@ -39,33 +39,55 @@ div {
 	color: white;
 }
 .boat {
-	width: 0;
-	height: 0;
+
 }
 .grey {
-	background-color: #464646;
+	background-color: #84939A;
+}
+.top {
+	background-image: url("../images/triangle.png");
+}
+.bottom {
+	background-image: url("../images/triangle.png");
+	
+}
+.left {
+	background-image: url("../images/triangle.png");
+	
+}
+.right {
+	background-image: url("../images/triangle.png");
+	
 }
 
-.arrow-up {
+/*.arrow-up {
+	width: 0;
+	height: 0;
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	border-bottom: 15px solid #464646;
 }
 .arrow-right {
+	width: 0;
+	height: 0;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent;
 	border-left: 15px solid #464646;
 }
 .arrow-down {
+	width: 0;
+	height: 0;
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	border-top: 15px solid #464646;
 }
 .arrow-left {
+	width: 0;
+	height: 0;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent;
 	border-right: 15px solid #464646;
-}
+}*/
 
 header {
 	width: 500px;
