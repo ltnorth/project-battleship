@@ -1,8 +1,10 @@
 $(function() {
 
-	
-	generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"));
-	generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"));
+	var hitCountP1 = 0;
+	var hitCountP2 = 0;
+	var hitCount = [0,0];
+	generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"), 0);
+	generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"), 1);
 	
 	$("#begin").click(function() {
 		$(".display").show();
@@ -20,19 +22,15 @@ $(function() {
 		$("#player1").hide();
 		$("#player2").show();
 	});
-	$("#missBtn").click(function() {
-		$(".appendage").hide();
-		$("div:visible").hide();
-		$("div:hidden").show();
-	});
+	
 
-	function generatePlayerDisplay(display1, display2, opponent) {
-		generateBoard(display1, opponent);
+	function generatePlayerDisplay(display1, display2, opponent, player) {
+		generateBoard(display1, opponent, player);
 		generateBoard(display2);
 		addBoats(display2);
 	}
 
-	function generateBoard(display, display2) {
+	function generateBoard(display, opponent, player) {
 		var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 		for(var i = 0; i < 121; i++) {
 			$(display).append($("<li></li>"));
@@ -47,13 +45,11 @@ $(function() {
 				$(li).html(letters[index/11-1]);
 			} else {
 				$(li).one("click", function() {
-					if(hitCheck(index, display2) === true) {
-						hit($(li));
-
+					if(hitCheck(index, opponent) === true) {
+						hit($(li), player);
+						winCheck(player);
 					} else {
-						miss($(li), display);
-						
-
+						miss($(li), display, opponent);
 					}
 				});
 			}
@@ -61,13 +57,15 @@ $(function() {
 
 	}
 
-	function hit(li) {
+	function hit(li, player) {
 		li.html("&#x25cf");
 		li.addClass("red");
 		$(".hit").show();
+		hitCount[player]++;
 	}
 
-	function miss(li, display) {
+	function miss(li, display, opponent) {
+		$(".hit").hide();
 		li.html("&#x25cf");
 		li.addClass("white");
 		$(display).parent().fadeOut(500);
@@ -75,13 +73,27 @@ $(function() {
 		setTimeout(function() {
 			$(".miss").fadeIn(500);
 		}, 500);
+		$("#missBtn").click(function() {
+			$(".appendage").hide();
+			$(display).parent().hide();
+			$(opponent).parent().show();
+		});
 	}
 
-	// function winCheck(num) {
-	// 	if(num === 17) {
-
-	// 	}
-	// }
+	function winCheck() {
+		console.log("You got here");
+		if(hitCount[0] === 17) {
+			$(".display").fadeOut(2000);
+			setTimeout(function() {
+				$("#winDisplay1").fadeIn(2000);
+			}, 2000);
+		} else if(hitCount[1] === 17){
+			$(".display").fadeOut(2000);
+			setTimeout(function() {
+				$("#winDisplay2").fadeIn(2000);
+			}, 2000);
+		}
+	}
 
 	function hitCheck(num, display) {
 		var lis = $(display).children()

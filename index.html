@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>Battleships</h1>
-	<button id="show1">Player 1 screen</button>
-	<button id="show2">Player 2 screen</button>
+<!-- 	<button id="show1">Player 1 screen</button>
+	<button id="show2">Player 2 screen</button> -->
 
 	<header id="startDisplay">
 		<p>Welcome to Battleships! A guessing game where the aim is to sink your opponent's fleet before they sink yours. Take shots by clicking on the blank grid, if you hit any of your opponent's ships, you may take another shot, if not, it's your opponent's turn to take a shot at your ships!</p>
@@ -33,8 +33,13 @@
 		<button class="miss appendage" id="missBtn">Next player</button>
 		<p class="message">Click anywhere in the grid to take a shot.</p>
 	</main>
-	<footer>
+	<div class="appendage" id="winDisplay1">
+		<p>Player 1 has won! Congratulations! Commiserations to Player 2, better luck next time!</p>
 		<button id="reset">Play again?</button>
-	</footer>
+	</div>
+	<div class="appendage" id="winDisplay2">
+		<p>A player has won! Congratulations! Commiserations to Player 1, better luck next time!</p>
+		<button id="reset">Play again?</button>
+	</div>
 </body>
 </html>

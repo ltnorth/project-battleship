@@ -27,7 +27,7 @@ div {
 	margin: 20px auto;
 }
 
-.display {
+.display, .appendage {
 	text-align: center;
 	display: none;
 }
@@ -51,9 +51,7 @@ header {
 	width: 100px;
 	height: 30px;
 }
-#reset {
-	display: none;
-}
+
 
 
 
