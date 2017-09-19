@@ -1,10 +1,13 @@
 $(function() {
 
-	var hitCountP1 = 0;
-	var hitCountP2 = 0;
-	var hitCount = [0,0];
-	generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"), 0);
-	generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"), 1);
+	var hitCount;
+
+	function run() {
+		hitCount = [0,0];
+		generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"), 0);
+		generatePlayerDisplay($("#player21"), $("#player22"), $("#player12"), 1);
+	}
+	
 	
 	$("#begin").click(function() {
 		$(".display").show();
@@ -21,6 +24,11 @@ $(function() {
 		$(".display").show();
 		$("#player1").hide();
 		$("#player2").show();
+	});
+	$("#reset").click(function() {
+		console.log('reset hit');
+		run();
+		console.log('here too');
 	});
 	
 
@@ -58,10 +66,12 @@ $(function() {
 	}
 
 	function hit(li, player) {
+		console.log(hitCount[player]);
 		li.html("&#x25cf");
 		li.addClass("red");
 		$(".hit").show();
 		hitCount[player]++;
+		console.log(hitCount[player]);
 	}
 
 	function miss(li, display, opponent) {
@@ -167,7 +177,7 @@ $(function() {
 
 
 
-
+    run();
 
 
 });
