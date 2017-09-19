@@ -46,6 +46,7 @@ div {
 }
 .top {
 	background-image: url("../images/triangle.png");
+	background-size: cover;
 }
 .bottom {
 	background-image: url("../images/triangle.png");
