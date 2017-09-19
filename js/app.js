@@ -12,6 +12,7 @@ $(function() {
 		$("#player1").show();
 		$("#player2").hide();
 		$("#start-display").hide();
+		$("#reset-message").hide();
 	});
 
 	// Buttons to reveal either player 1's or player 2's screens (mainly used while under construction of the game)
