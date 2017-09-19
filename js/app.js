@@ -125,25 +125,44 @@ $(function() {
 		var check = false;
 		while(boats.length !== 0) {
 			var boat = selectNumber(boats);
+			var dimension = selectNumber([0,1]);
 			while(check === false){
-				var position = randomGridPos(boat);
-				if(verify(boat, position, display) === true){
-					for(var i = 0; i < boat; i++) {
-						$(lis[position + i]).addClass("boat");
+				if(dimension === 0) {
+					var position = randomGridPos(boat, 0);
+					if(verify(boat, position, display, 0) === true){
+						for(var i = 0; i < boat; i++) {
+							$(lis[position + i]).addClass("boat");
+						}
+						check = true;
 					}
-					check = true;
+				} else {
+					var position = randomGridPos(boat, 1);
+					if(verify(boat, position, display, 1) === true){
+						for(var i = 0; i < boat; i++) {
+							$(lis[position + (i*11)]).addClass("boat");
+						}
+						check = true;
+					}
 				}
 			}
 			check = false;
 		}
 	}
 
-	function verify(boat, position, display) {
+	function verify(boat, position, display, dim) {
 		var lis = $(display).children();
 		var count = 0;
-		for(var i = 0; i < boat; i++) {
-			if($(lis[position + i]).hasClass("boat") === true) {
-				count++;
+		if(dim === 0){
+			for(var i = 0; i < boat; i++) {
+				if($(lis[position + i]).hasClass("boat") === true) {
+					count++;
+				}
+			}
+		} else {
+			for(var i = 0; i < boat; i++) {
+				if($(lis[position + (i*11)]).hasClass("boat") === true) {
+					count++;
+				}
 			}
 		}
 		if(count === 0) {
@@ -151,9 +170,14 @@ $(function() {
 		}
 	}
 	
-	function randomGridPos(num) {
-		var row = Math.ceil(Math.random()*10);
-		var col = Math.ceil(Math.random()*(10 - num));
+	function randomGridPos(num, dim) {
+		if(dim === 0) {
+			var row = Math.ceil(Math.random()*10);
+			var col = Math.ceil(Math.random()*(10 - num));
+		} else {
+			var row = Math.ceil(Math.random()*(10 - num));
+			var col = Math.ceil(Math.random()*10);
+		}
 		return (row*11) + col;
 	}
 
