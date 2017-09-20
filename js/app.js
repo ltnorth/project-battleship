@@ -106,10 +106,10 @@ $(function() {
 			} else if(opponent) {				// If an opponent's board is specified it makes the board clickable and checks hit
 				$(li).one("click", function() {
 					if(hitCheck(index, opponent) === true) {
-						hit($(li), player);
+						hit($(li), opponent, index, player);
 						winCheck(player);
 					} else {
-						miss($(li), display, opponent);
+						miss($(li), display, opponent, index);
 					}
 				});
 			}
@@ -117,19 +117,25 @@ $(function() {
 	}
 
 	// What happens when an enemy boat is hit
-	function hit(li, player) {
+	function hit(li, opponent, index, player) {
+		var enemySquare = $(opponent).children();
 		li.html("&#x25cf");
 		li.addClass("red");
+		$(enemySquare[index]).html("&#x25cf");
+		$(enemySquare[index]).addClass("red");
 		$(".hit").show();
 		hitCount[player]++;
 		$("#hitSound")[0].play();
 	}
 
 	// What happens when no boat is hit
-	function miss(li, display, opponent) {
+	function miss(li, display, opponent, index) {
+		var enemySquare = $(opponent).children();
 		$(".hit").hide();
 		li.html("&#x25cf");
 		li.addClass("white");
+		$(enemySquare[index]).html("&#x25cf");
+		$(enemySquare[index]).addClass("white");
 		$("#missSound")[0].play();
 		$(display).parent().fadeOut(500);
 		$(".message").fadeOut(500);
