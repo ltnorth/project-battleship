@@ -8,12 +8,14 @@
 </head>
 <body>
 	<h1>Battleships</h1>
-	<button id="show1">Player 1 screen</button>
-	<button id="show2">Player 2 screen</button>
+<!-- 	<button id="show1">Player 1 screen</button>
+	<button id="show2">Player 2 screen</button> -->
 
 	<header>
 		<div id="start-display">
-			<p>Welcome to Battleships! A guessing game where the aim is to sink your opponent's fleet before they sink yours. Take shots by clicking on the blank grid, if you hit any of your opponent's ships, you may take another shot, if not, it's your opponent's turn to take a shot at your ships!</p>
+			<h3>Welcome to Battleships!</h3>
+			<p>If you are unsure on how to play, click the button below to review how it works.</p>
+			<button id="instr-btn">How to play</button>
 			<p>When you are ready, click the button below to begin where player 1 has the first go.</p>
 			<button class="begin">Click to begin</button>
 		</div>
@@ -21,6 +23,14 @@
 			<p>Get ready! Player 1 to play first.</p>
 			<button class="begin">Click to begin</button>
 		</div>
+
+		<div id="instr-box" class="modal">
+		  <div class="modal-content">
+		    <p>A guessing game where the aim is to sink your opponent's fleet before they sink yours. Take shots by clicking on the blank grid, if you hit any of your opponent's ships, you may take another shot, if not, it's your opponent's turn to take a shot at your ships!</p>
+		    <span id="close" ="close">Close</span>
+		  </div>
+		</div>
+
 	</header>
 
 	<main class="display">

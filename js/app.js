@@ -4,7 +4,6 @@ $(function() {
 	var hitCount;
 
 	// All button click functions
-	
 
 	// The button to start the game and reveal player 1's screen
 	$(".begin").click(function() {
@@ -13,6 +12,14 @@ $(function() {
 		$("#player2").hide();
 		$("#start-display").hide();
 		$("#reset-message").hide();
+	});
+
+	// Button to display instructions
+	$("#instr-btn").click(function() {
+		$("#instr-box").show();
+	});
+	$("#close").click(function() {
+		$("#instr-box").hide();
 	});
 
 	// Buttons to reveal either player 1's or player 2's screens (mainly used while under construction of the game)
