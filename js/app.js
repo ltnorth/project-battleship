@@ -26,14 +26,24 @@ $(function() {
 
 	// Buttons to reveal either player 1's or player 2's screens (mainly used while under construction of the game)
 	$("#show1").click(function() {
-		$(".display").show();
-		$("#player2").hide();
-		$("#player1").show();
+		$("#player12").show();
+		$("#show1").hide();
+		$("#hide1").show();
+	});
+	$("#hide1").click(function() {
+		$("#player12").hide();
+		$("#show1").show();
+		$("#hide1").hide();
 	});
 	$("#show2").click(function() {
-		$(".display").show();
-		$("#player1").hide();
-		$("#player2").show();
+		$("#player22").show();
+		$("#show2").hide();
+		$("#hide2").show();
+	});
+	$("#hide2").click(function() {
+		$("#player22").hide();
+		$("#show2").show();
+		$("#hide2").hide();
 	});
 
 	// Button for resetting the displays (regenerating player boards and resetting hit counts)

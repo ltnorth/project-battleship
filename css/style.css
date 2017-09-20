@@ -27,6 +27,12 @@ div {
 	margin: 20px auto;
 }
 
+#player12, #player22, #hide1, #hide2 {
+	display: none;
+}
+
+
+
 .display, .appendage, #reset-message {
 	text-align: center;
 	display: none;
