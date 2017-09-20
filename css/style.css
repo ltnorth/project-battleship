@@ -31,6 +31,10 @@ div {
 	text-align: center;
 	display: none;
 }
+.go-left {
+	text-align: left;
+	width: 100vw;
+}
 
 .modal {
     display: none; /* Hidden by default */
@@ -51,9 +55,10 @@ div {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    text-align: center;
 }
 #close {
-	color: #aaaaaa;
+	color: #777;
 	font-weight: bold;
 }
 #close:hover,

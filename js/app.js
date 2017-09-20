@@ -6,15 +6,17 @@ $(function() {
 	// All button click functions
 
 	// The button to start the game and reveal player 1's screen
+
 	$(".begin").click(function() {
 		$(".display").show();
 		$("#player1").show();
 		$("#player2").hide();
-		$("#start-display").hide();
+		$(".start-display").hide();
 		$("#reset-message").hide();
+		$("header").addClass("go-left");
 	});
 
-	// Button to display instructions
+	// Buttons to display and close instructions box
 	$("#instr-btn").click(function() {
 		$("#instr-box").show();
 	});
@@ -46,6 +48,8 @@ $(function() {
 	// All functions
 
 	// The function that generates the players' boards and resets the score
+	
+
 	function run() {
 		hitCount = [0,0];
 		generatePlayerDisplay($("#player11"), $("#player12"), $("#player22"), 0);
@@ -53,6 +57,7 @@ $(function() {
 	}
 	
 	// Clears all li elements to be then regenerated when run() is called again by the reset button
+	
 	function clearAll() {
 		$("#player11").empty();
 		$("#player12").empty();
@@ -99,7 +104,6 @@ $(function() {
 				});
 			}
 		});
-
 	}
 
 	// What happens when an enemy boat is hit
@@ -155,6 +159,8 @@ $(function() {
 	}
 
 	// Randomly adds boats to a specified board
+
+
 	function addBoats(display) {
 		var lis = $(display).children();
 		var boats = [2, 3, 3, 4, 5];
@@ -167,13 +173,6 @@ $(function() {
 					var position = randomGridPos(boat, 0);	// Generates a random location to place the boat in
 					if(verify(boat, position, display, 0) === true){	// Verify checks whether the boat will overlap with another
 						for(var i = 0; i < boat; i++) {
-							// if(i === 0){
-							// 	$(lis[position]).addClass("boat left");
-							// } else if(i === boat-1) {
-							// 	$(lis[position + i]).addClass("boat right");
-							// } else {
-							// 	$(lis[position + i]).addClass("boat grey");
-							// }
 							$(lis[position + i]).addClass("boat grey");
 						}
 						check = true;
@@ -182,13 +181,6 @@ $(function() {
 					var position = randomGridPos(boat, 1);
 					if(verify(boat, position, display, 1) === true){
 						for(var i = 0; i < boat; i++) {
-							// if(i === 0){
-							// 	$(lis[position]).addClass("boat top");
-							// } else if(i === boat-1) {
-							// 	$(lis[position + (i*11)]).addClass("boat bottom");
-							// } else {
-							// 	$(lis[position + (i*11)]).addClass("boat grey");
-							// }
 							$(lis[position + (i*11)]).addClass("boat grey");
 						}
 						check = true;	// check variable is for entering in and out of the position generating while loop
@@ -201,6 +193,7 @@ $(function() {
 
 	// Function for checking whether the position a boat will be placed in will overlap with another
 		// Takes in the boat and the position, the display it will be placed in and the dimension to make checks in
+
 	function verify(boat, position, display, dim) {
 		var lis = $(display).children();
 		var count = 0;
@@ -249,4 +242,23 @@ $(function() {
 
 
 });
+
+
+// Conditions for possibly adding triangular ends to boats
+
+// if(i === 0){
+// 	$(lis[position]).addClass("boat left");
+// } else if(i === boat-1) {
+// 	$(lis[position + i]).addClass("boat right");
+// } else {
+// 	$(lis[position + i]).addClass("boat grey");
+// }
+
+// if(i === 0){
+// 	$(lis[position]).addClass("boat top");
+// } else if(i === boat-1) {
+// 	$(lis[position + (i*11)]).addClass("boat bottom");
+// } else {
+// 	$(lis[position + (i*11)]).addClass("boat grey");
+// }
 
