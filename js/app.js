@@ -101,6 +101,7 @@ $(function() {
 		li.addClass("red");
 		$(".hit").show();
 		hitCount[player]++;
+		$("#hitSound")[0].play();
 	}
 
 	// What happens when no boat is hit
@@ -108,6 +109,7 @@ $(function() {
 		$(".hit").hide();
 		li.html("&#x25cf");
 		li.addClass("white");
+		$("#missSound")[0].play();
 		$(display).parent().fadeOut(500);
 		$(".message").fadeOut(500);
 		setTimeout(function() {

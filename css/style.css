@@ -45,19 +45,19 @@ div {
 	background-color: #84939A;
 }
 .top {
-	background-image: url("../images/triangle.png");
+	background-image: url("../assets/triangle.png");
 	background-size: cover;
 }
 .bottom {
-	background-image: url("../images/triangle.png");
+	background-image: url("../assets/triangle.png");
 	
 }
 .left {
-	background-image: url("../images/triangle.png");
+	background-image: url("../assets/triangle.png");
 	
 }
 .right {
-	background-image: url("../images/triangle.png");
+	background-image: url("../assets/triangle.png");
 	
 }
 
