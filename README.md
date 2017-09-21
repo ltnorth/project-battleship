@@ -10,8 +10,7 @@ The purpose of creating this game was to bring together all that I have learnt s
 
 I wanted to take a systematic approach to creating the game, and set out a plan of steps I would take before starting.  
   
-* Style the board
-* Add the row and column labels
+* Style the board - add the row and column labels
 * Make the grid squares show red and white dots alternatively on click
 * Randomly add the ships to the board
 * Add a second player with their own display
