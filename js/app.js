@@ -157,12 +157,12 @@ $(function() {
 
 	// Checks to see if a player has won by checking hits made by each player and displaying win messages if one has
 	function winCheck() {
-		if(hitCount[0] === 1) {
+		if(hitCount[0] === 17) {
 			$(".display").fadeOut(2000);
 			setTimeout(function() {
 				$("#win-display1").fadeIn(2000);
 			}, 2000);
-		} else if(hitCount[1] === 1){
+		} else if(hitCount[1] === 17){
 			$(".display").fadeOut(2000);
 			setTimeout(function() {
 				$("#win-display2").fadeIn(2000);
