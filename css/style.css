@@ -50,6 +50,8 @@ img {
 	max-width: 100%
 }
 
+
+
 /*   classes   */
 
 .display, .appendage, #reset-message, .cancel-message {
@@ -118,4 +120,11 @@ img {
 #start {
 	width: 100px;
 	height: 30px;
+}
+
+@media only screen and (max-width: 784px) {
+	.go-left {
+		text-align: center;
+		margin: 0 auto;
+	}
 }
