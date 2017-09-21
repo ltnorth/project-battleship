@@ -20,13 +20,13 @@ I wanted to take a systematic approach to creating the game, and set out a plan 
 
 ##Implementation
 
-The tools I used to create the game were HTML5, CSS and JavaScript.  
+The tools I used to create the game were HTML, CSS and JavaScript.  
   
 Throughout the entire production process I tried to keep the code as dry as possible by constantly questioning the whether each process I introduced could be enclosed inside its own function. I also wanted to make the functions as generic as possible, and for them to not depend on which player they were being used for. For example: a generic function which adds ships to an empty board; also a general function which checks the opponent's board for ship locations when a square is clicked on either player's displays.
 
 ##Usage
 
-For now all the files are hosted locally.
+The game can be played online through my github at: ltnorth.github.io/project-battleship
 
 ##Challenges
 
@@ -36,7 +36,15 @@ The process of introducing another player with their own display was more diffic
 
 The functionality of the JavaScript file, at times, posed more problems to overcome than it solved. Having multiple functions inside one another led to issues with scope; understanding which functions could see which variables. It has also led to the fact that some of my functions require three and four arguments which are fed down a line of four functions, which became confusing at times to read what the arguments represented in terms of what you can see on screen. I tried to make the arguments as recognisable as possible so that they could be traced back up the line of functions but I think this is an area which I need to work on and keep in mind for my future work, by keeping functions as dumb as possible so as to not confuse either myself or anyone else reading my code.
 
+##The Future of the Game
 
+There are still many features that could be added to the game to make it more like the classic board game. Such features include:
+
+* Manual placement of the ships
+* Increasing the visual quality of the ships
+* Notifications of ships being destroyed
+
+I would like to work more on this game in the future and am excited to add these features in as my skillset becomes wider.
 
 
 

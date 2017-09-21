@@ -6,7 +6,6 @@ $(function() {
 	// All button click functions
 
 	// The button to start the game and reveal player 1's screen
-
 	$(".begin").click(function() {
 		$(".display").show();
 		$("#player1").show();
