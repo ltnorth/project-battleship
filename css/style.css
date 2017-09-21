@@ -31,7 +31,7 @@ div {
 	display: none;
 }
 
-.display, .appendage, #reset-message {
+.display, .appendage, #reset-message, .cancel-message {
 	text-align: center;
 	display: none;
 }
@@ -101,35 +101,6 @@ div {
 	
 }
 
-/*.arrow-up {
-	width: 0;
-	height: 0;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-bottom: 15px solid #464646;
-}
-.arrow-right {
-	width: 0;
-	height: 0;
-	border-top: 15px solid transparent;
-	border-bottom: 15px solid transparent;
-	border-left: 15px solid #464646;
-}
-.arrow-down {
-	width: 0;
-	height: 0;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-top: 15px solid #464646;
-}
-.arrow-left {
-	width: 0;
-	height: 0;
-	border-top: 15px solid transparent;
-	border-bottom: 15px solid transparent;
-	border-right: 15px solid #464646;
-}*/
-
 header {
 	width: 500px;
 	margin: 0 auto;
@@ -139,14 +110,3 @@ header {
 	width: 100px;
 	height: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-

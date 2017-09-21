@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Battleships!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/app.js"></script>
@@ -14,15 +15,20 @@
 				<h3>Welcome to Battleships!</h3>
 				<p>If you are unsure on how to play, click the button below to review how it works.</p>
 			</div>
-			<button id="instr-btn">How to play</button>
+			<button id="instr-btn" class="rounded">How to play</button>
 			<div class="start-display">
 				<p>When you are ready, click the button below.</p>
-				<button class="begin">Click to begin</button>
+				<button class="begin rounded">Click to begin</button>
 			</div>
 		</div>
 		<div id="reset-message">
 			<p>Get ready! Player 1 to play first.</p>
-			<button class="begin">Click to begin</button>
+			<button class="begin rounded">Click to begin</button>
+		</div>
+	
+		<div class="cancel-message">
+			<p>Thank you for playing!</p>
+			<button class="playAgain rounded">Reset</button>
 		</div>
 
 		<div id="instr-box" class="modal">
@@ -36,8 +42,8 @@
 		<div id="player1">
 			<h2>Player 1</h2>
 			<p>
-				<button id="show1">Show board</button>
-				<button id="hide1">Hide board</button>
+				<button id="show1" class="rounded">Show board</button>
+				<button id="hide1" class="rounded">Hide board</button>
 			</p>
 			<ul id="player11"></ul>
 			<ul id="player12"></ul>
@@ -45,25 +51,28 @@
 		<div id="player2">
 			<h2>Player 2</h2>
 			<p>
-				<button id="show2">Show board</button>
-				<button id="hide2">Hide board</button>
+				<button id="show2" class="rounded">Show board</button>
+				<button id="hide2" class="rounded">Hide board</button>
 			</p>
 			<ul id="player21"></ul>
 			<ul id="player22"></ul>
 		</div>
 		<p class="hit appendage">That's a hit! Fire again!</p>
 		<p class="miss appendage">You missed! Click the button to switch players.</p>
-		<button class="miss appendage" id="miss-btn">Next player</button>
+		<button class="miss appendage rounded" id="miss-btn">Next player</button>
 		<p class="message">Click anywhere in the grid to take a shot.</p>
 	</main>
 	<div class="appendage" id="win-display1">
 		<p>Player 1 has won! Congratulations! Commiserations to Player 2, better luck next time!</p>
-		<button class="reset">Play again?</button>
+		<button class="reset rounded playAgain">Play again?</button>
+		<button class="reset rounded cancel">Cancel</button>
 	</div>
 	<div class="appendage" id="win-display2">
 		<p>Player 2 has won! Congratulations! Commiserations to Player 1, better luck next time!</p>
-		<button class="reset">Play again?</button>
+		<button class="reset rounded playAgain">Play again?</button>
+		<button class="reset rounded cancel">Cancel</button>
 	</div>
+
 
 	<audio id="hitSound">
 		<source src="assets/hit.mp3" type="audio/mpeg">

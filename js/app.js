@@ -14,6 +14,7 @@ $(function() {
 		$(".start-display").hide();
 		$("#reset-message").hide();
 		$("header").addClass("go-left");
+		$(".cancel-message").hide();
 	});
 
 	// Buttons to display and close instructions box
@@ -47,11 +48,16 @@ $(function() {
 	});
 
 	// Button for resetting the displays (regenerating player boards and resetting hit counts)
-	$(".reset").click(function() {
+	$(".playAgain").click(function() {
 		clearAll();
 		run();
 		$("#reset-message").show();
 		$(".appendage").hide();
+		$(".cancel-message").hide();
+	});
+	$(".cancel").click(function() {
+		$(".appendage").hide();
+		$(".cancel-message").show();
 	});
 
 
@@ -151,12 +157,12 @@ $(function() {
 
 	// Checks to see if a player has won by checking hits made by each player and displaying win messages if one has
 	function winCheck() {
-		if(hitCount[0] === 17) {
+		if(hitCount[0] === 1) {
 			$(".display").fadeOut(2000);
 			setTimeout(function() {
 				$("#win-display1").fadeIn(2000);
 			}, 2000);
-		} else if(hitCount[1] === 17){
+		} else if(hitCount[1] === 1){
 			$(".display").fadeOut(2000);
 			setTimeout(function() {
 				$("#win-display2").fadeIn(2000);
@@ -258,23 +264,4 @@ $(function() {
 
 
 });
-
-
-// Conditions for possibly adding triangular ends to boats
-
-// if(i === 0){
-// 	$(lis[position]).addClass("boat left");
-// } else if(i === boat-1) {
-// 	$(lis[position + i]).addClass("boat right");
-// } else {
-// 	$(lis[position + i]).addClass("boat grey");
-// }
-
-// if(i === 0){
-// 	$(lis[position]).addClass("boat top");
-// } else if(i === boat-1) {
-// 	$(lis[position + (i*11)]).addClass("boat bottom");
-// } else {
-// 	$(lis[position + (i*11)]).addClass("boat grey");
-// }
 
