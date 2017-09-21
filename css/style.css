@@ -22,14 +22,23 @@ li {
 	float: left;
 	font-size: 20px;
 	line-height: 30px;
+	color: #000;
 }
-div {
-	margin: 20px auto;
+button {
+	margin: 5px;
+	height: 40px;
+}
+header {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+img {
+	margin: 0 auto;
+	display: block;
 }
 
-#player12, #player22, #hide1, #hide2 {
-	display: none;
-}
+/*   classes   */
 
 .display, .appendage, #reset-message, .cancel-message {
 	text-align: center;
@@ -61,6 +70,18 @@ div {
     width: 80%;
     text-align: center;
 }
+.red {
+	color: red;
+}
+.white {
+	color: white;
+}
+.boat {
+	background-color: #84939A;
+}
+
+/*   id's   */
+
 #close {
 	color: #777;
 	font-weight: bold;
@@ -71,40 +92,11 @@ div {
     text-decoration: none;
     cursor: pointer;
 }
-
-.red {
-	color: red;
+#logo:hover {
+	cursor: pointer;
 }
-.white {
-	color: white;
-}
-.boat {
-
-}
-.grey {
-	background-color: #84939A;
-}
-.top {
-	background-image: url("../assets/triangle.png");
-	background-size: cover;
-}
-.bottom {
-	background-image: url("../assets/triangle.png");
-	
-}
-.left {
-	background-image: url("../assets/triangle.png");
-	
-}
-.right {
-	background-image: url("../assets/triangle.png");
-	
-}
-
-header {
-	width: 500px;
-	margin: 0 auto;
-	text-align: center;
+#player12, #player22, #hide1, #hide2 {
+	display: none;
 }
 #start {
 	width: 100px;

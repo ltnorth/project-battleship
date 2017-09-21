@@ -25,7 +25,7 @@ $(function() {
 		$("#instr-box").hide();
 	});
 
-	// Buttons to reveal either player 1's or player 2's screens (mainly used while under construction of the game)
+	// Buttons to show and hide each players' board with ships on
 	$("#show1").click(function() {
 		$("#player12").show();
 		$("#show1").hide();
@@ -47,7 +47,7 @@ $(function() {
 		$("#hide2").hide();
 	});
 
-	// Button for resetting the displays (regenerating player boards and resetting hit counts)
+	// Buttons for resetting the displays (regenerating player boards and resetting hit counts)
 	$(".playAgain").click(function() {
 		clearAll();
 		run();
@@ -58,6 +58,9 @@ $(function() {
 	$(".cancel").click(function() {
 		$(".appendage").hide();
 		$(".cancel-message").show();
+	});
+	$("#logo").click(function() {
+		location.reload();
 	});
 
 
@@ -195,7 +198,7 @@ $(function() {
 					var position = randomGridPos(boat, 0);	// Generates a random location to place the boat in
 					if(verify(boat, position, display, 0) === true){	// Verify checks whether the boat will overlap with another
 						for(var i = 0; i < boat; i++) {
-							$(lis[position + i]).addClass("boat grey");
+							$(lis[position + i]).addClass("boat");
 						}
 						check = true;
 					}
@@ -203,7 +206,7 @@ $(function() {
 					var position = randomGridPos(boat, 1);
 					if(verify(boat, position, display, 1) === true){
 						for(var i = 0; i < boat; i++) {
-							$(lis[position + (i*11)]).addClass("boat grey");
+							$(lis[position + (i*11)]).addClass("boat");
 						}
 						check = true;	// check variable is for entering in and out of the position generating while loop
 					}
