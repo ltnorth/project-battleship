@@ -2,6 +2,10 @@
 
 The game I chose to make was Battleships, a classic board game for two players.
 
+##Purpose
+
+The purpose of creating this game was to bring together all that I have learnt so far in HTML, CSS and JavaScript to solidify my understanding of the three languages and how they incorporate one another. 
+
 ##My Approach
 
 I wanted to take a systematic approach to creating the game, and set out a plan of steps I would take before starting.  
