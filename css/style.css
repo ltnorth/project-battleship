@@ -2,7 +2,7 @@ body {
 	font-family: "Helvetica";
 	width: 100vw;
 	height: 100vh;
-	background-color: #FF9505;
+	background: linear-gradient(to bottom, #d5dae2 70%, #33ccff 100%);
 }
 
 ul {
